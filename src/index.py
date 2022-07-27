@@ -19,7 +19,7 @@ def detector():
 
     live_Camera = cv2.VideoCapture(0) # variable iniciando captura del video
     lower_bound = np.array([11,33,111])
-    upper_bound = np.array([90,255,255])
+    upper_bound = np.array([90,255,255]) 
 
     while(live_Camera.isOpened()): #leer el material de archivo en un ciclo while infinito
         ret, frame = live_Camera.read()
