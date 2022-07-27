@@ -15,7 +15,10 @@
 </head>
 
 <body>
-    <h1>DETECTOR DE <b>INCENDIOS</b></h1>
+    <img src="{{ url_for('static', filename='img/circle.png') }}" class="circulo" id="img-logo2">
+    <center>
+        <h1 class="texto-encima">DETECTOR DE <b>INCENDIOS</b></h1>
+    </center>
     <!-- Principal-->
     <div class="container p-4">
         {% block content %}

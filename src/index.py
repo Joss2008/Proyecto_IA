@@ -12,6 +12,7 @@ def error():
 
 @app.route('/detectando')
 def detector():
+    from pygame import mixer
     import cv2
     import numpy as np
     import matplotlib.pyplot as plt
@@ -35,9 +36,14 @@ def detector():
 
         check_if_fire_detected = cv2.countNonZero(image_binary)
         if int(check_if_fire_detected) >= 20000 :
-            cv2.putText(frame,"Fire Detected !",(300,60),cv2.FONT_HERSHEY_COMPLEX,3,(0,0,255),2)
-        cv2.imshow("Fire Detection",frame)
+            cv2.putText(frame,"Fuego detectado !",(300,60),cv2.FONT_HERSHEY_COMPLEX,3,(0,0,255),2)
+            mixer.init()
+            alarma=mixer.Sound("alarma.wav")
+            mixer.Sound.play(alarma)
+            
 
+        cv2.imshow("Fire Detection",frame)
+        
         if cv2.waitKey(10) == 27 :  ##Detener el video
             break
 
