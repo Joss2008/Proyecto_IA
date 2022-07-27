@@ -38,7 +38,7 @@ def detector():
         if int(check_if_fire_detected) >= 20000 :
             cv2.putText(frame,"Fuego detectado !",(300,60),cv2.FONT_HERSHEY_COMPLEX,3,(0,0,255),2)
             mixer.init()
-            alarma=mixer.Sound("alarma.wav")
+            alarma=mixer.Sound("static/sonido/alarma.wav")
             mixer.Sound.play(alarma)
             
 
